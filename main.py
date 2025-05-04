@@ -59,7 +59,7 @@ def get_single_song(update: Update, context: CallbackContext):
     context.bot.send_message(chat_id=chat_id, text="🔍 Downloading")
 
     if url.startswith(("http://", "https://")):
-        os.system(f'spotdl download "{url}" --threads 16 --format mp3 --bitrate 320k --lyrics genius')
+        os.system(f'spotdl download "{url}" --threads 8 --format mp3 --bitrate 320k --lyrics genius')
 
         logger.info('Sending song to user...')
         sent = 0
